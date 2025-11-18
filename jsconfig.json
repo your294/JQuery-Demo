@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "es2022",
+        "module": "esnext",
+        "checkJs": true,
+        "allowJs": true,
+        "lib": [
+            "es2022",
+            "dom"
+        ]
+    },
+    "include": [
+        "mock/*",
+        "js/*"
+    ] // 包含你所有 JS 文件的路径
+}
