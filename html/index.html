@@ -1,22 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- 你缺少这行！ 这是iCheck初始化失败的重要原因 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.bootcdn.net/ajax/libs/iCheck/1.0.3/skins/flat/green.css"
+    />
     <style>
-        body {
-            height: 100vh;
-            width: 100vw;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+      body {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <div>
+      <input id="name-check" type="checkbox" />
+      <label>测试</label>
+    </div>
+    <button id="console-btn">输出console</button>
     <button id="download-btn">下载</button>
-</body>
-<script type="module" src="../js/sliceDownload.js"></script>
-<script type="module" src="../js/download.js"></script>
+  </body>
+  <script src="../dist/jquery.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/iCheck/1.0.3/icheck.js"></script>
+  <script>
+    $(function () {
+      $("#name-check").iCheck({
+        checkboxClass: "icheckbox_flat-green",
+        radioClass: "iradio_flat-green",
+        increaseArea: "20%", // 增加点击区域
+      });
+
+      $("#console-btn").on("click", function() {
+        console.log($("#name-check").data('iCheck'));
+      })
+    });
+  </script>
+  <script type="module" src="../js/sliceDownload.js"></script>
+  <script type="module" src="../js/download.js"></script>
 </html>
