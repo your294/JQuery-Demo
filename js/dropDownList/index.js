@@ -75,9 +75,9 @@
         }
 
         originData += data;
-        const atIndex = onObserveInput(cursorFocusNode);
+        const { atIndex, cursorLength } = onObserveInput(cursorFocusNode);
         $dropdown.data("at-index", atIndex);
-        if (atIndex !== -1) {
+        if (atIndex !== -1 && atIndex === cursorLength - 1) {
           const { x, y } = getCursorPosition();
           $dropdown.css("top", `${y}px`).css("left", `${x}px`);
           openList();
