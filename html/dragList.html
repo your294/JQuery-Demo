@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Draggable List</title>
+    <style>
+      .drag-list {
+        position: relative;
+        list-style: none;
+        padding: 0;
+        margin: 20px auto;
+        width: 300px;
+        background: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+      }
+
+      .drag-item {
+        padding: 12px 16px;
+        background: white;
+        margin: 4px 0;
+        cursor: move;
+        user-select: none;
+        transition: transform 0.2s, background-color 0.2s;
+        border: 1px solid #eee;
+        border-radius: 4px;
+      }
+
+      .drag-item:hover {
+        background-color: #f0f8ff;
+      }
+
+      .drag-item.placeholder {
+        border: 2px solid #00bcd4;
+      }
+
+      .drag-item.dragging {
+        opacity: 0.4;
+      }
+
+      .drag-item.ghost {
+        background-color: #e0f7fa;
+        border: 1px dashed #00bcd4;
+        pointer-events: none;
+      }
+      body.noselect {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="sortable-list" class="drag-list">
+      <li class="drag-item">项目 1</li>
+      <li class="drag-item">项目 2</li>
+      <li class="drag-item">项目 3</li>
+      <li class="drag-item">项目 4</li>
+      <li class="drag-item">项目 5</li>
+    </ul>
+  </body>
+  <script src="../js/jquery-3.7.1.min.js"></script>
+  <script src="../js/draggableList/draggable.js"></script>
+</html>
