@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LazyLoadPicture</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .pic-wrapper {
+            display: flex;
+            flex-direction: column;
+
+            width: 200px;
+            min-height: 200px;
+            border: 1px solid gray;
+            padding: 5px;
+        }
+        #load-btn {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="load-btn">加载图片</button>
+    <div id="pic-container" class="pic-wrapper">
+
+    </div>
+</body>
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script src="../js/utils/image.js"></script>
+<script src="../js/lazyLoadImage/promiseQueue.js"></script>
+<script src="../js/lazyLoadImage/index.js"></script>
+</html>
