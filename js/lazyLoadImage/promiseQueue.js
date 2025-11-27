@@ -40,7 +40,7 @@ class PromiseQueue {
 
     /**
      * 尝试清空当前PromiseQueue，并开始转入内容进入exec_queue
-     * @return {Promise<Array>}
+     * @return {Promise<Array<ExecReturn>>}
      */
     exec() {
         if (this.exec_queue.length <= 0) return;
