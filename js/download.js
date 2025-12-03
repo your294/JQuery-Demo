@@ -1,4 +1,5 @@
 import SliceDownloader from "./sliceDownload.js";
+import { downloadByForm, downloadThroughPost } from "../js/utils/download.js"
 
 function downloadByALink(path, fileName) {
   const link = document.createElement("a");
@@ -29,7 +30,7 @@ function useSliceDownloader() {
 
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('download-btn').addEventListener('click', () => {
-    useSliceDownloader();
+    downloadThroughPost('http://localhost:3000/downloadBySerial', { file_serial: 1 })
   })
 })
 
